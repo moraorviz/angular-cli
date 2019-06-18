@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { RouterModule } from '@angular/router';
-
 import { LoginComponent } from './login/login.component';
+import { MensajesService } from './services/mensajes.service';
+import { HttpModule } from '@angular/http'; 
 
 @Component({
   selector: 'app-root',
@@ -27,8 +28,9 @@ export class AppComponent {
       { path: '',  component: LoginComponent },
       { path: 'login',  component: LoginComponent }
     ]),
+    HttpModule
   ],
-  providers: [],
+  providers: [MensajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
+
+@Injectable()
+export class MensajesService {
+    constructor(
+        private http: Http,
+    ) { }
+
+    token;
+    urlBase = "http://localhost:8081/api";
+    
+    identificarUsuario(email, password) {
+        var url = this.urlBase + "/autenticar";
+        var body = { "email" : email, "password" : password };
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/JSON');
+        
+        var resObservable = this.http.post(url, body, { headers: headers });
+        
+        resObservable.subscribe(
+            res => { 
+                this.token = res.json().token; 
+                console.log(this.token);
+            },
+            error => { 
+                console.log(error.json());
+            }  
+         );
+         return resObservable;
+    };
+}
