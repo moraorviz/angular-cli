@@ -18,7 +18,6 @@ export class MensajesService {
         headers.append('Content-Type', 'application/JSON');
         
         var resObservable = this.http.post(url, body, { headers: headers });
-        
         resObservable.subscribe(
             res => { 
                 this.token = res.json().token; 
@@ -49,5 +48,15 @@ export class MensajesService {
                     return false;
                  }
            );
+    };
+
+    getMensajes() {
+       var url = this.urlBase + "/mensaje";
+       var headers = new Headers();
+       headers.append('Content-Type', 'application/JSON');
+       headers.append('token', ''+this.token+'');
+       
+       var resObservable = this.http.get(url, { headers: headers });
+       return resObservable;
     };
 }

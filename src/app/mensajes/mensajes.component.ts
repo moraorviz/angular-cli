@@ -15,10 +15,16 @@ export class MensajesComponent implements OnInit {
     ngOnInit(): void {
         console.log("onInit - inicio");
 
-        this.mensajes =  [
-            {"_id": 1, "emisor" : "Jhon", "destino" : "Wick", "texto": "I do appear in Cyberpunk", "leido": "yes" },
-            {"_id": 1, "emisor" : "Mortadelo", "destino" : "Filemón", "texto": "Nos llama el inspector", "leido": "no" },
-        ];
+        var resObservable = this.mensajesService.getMensajes();
+        resObservable.subscribe(
+            res => { 
+                this.mensajes = res.json();
+                console.log(this.mensajes);
+            },
+            error => {
+                console.log("Error");
+            }
+          );
 
         console.log("onInit - final");
     };
