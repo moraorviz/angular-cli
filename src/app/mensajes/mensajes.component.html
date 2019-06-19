@@ -1,0 +1,21 @@
+<div id="widget-mensajes" >
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Genero</th>
+				<th>Precio</th>
+				<th class="col-md-1"></th>
+			</tr>
+		</thead>
+		<tbody id="tablaCuerpo">
+			<tr *ngFor="let mensaje of mensajes">
+				<td>{{ mensaje.emisor }}</td>
+				<td>{{ mensaje.destino }}</td>
+				<td>{{ mensaje.texto }}</td>
+				<td>{{ mensaje.leido }}</td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
