@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { Component } from '@angular/core';
+import { MensajesService } from './services/mensajes.service';
 
 @Component({
   selector: 'app-root', 
@@ -9,16 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Mensajería';
+
+  constructor(
+    private mensajesService: MensajesService
+  ) {}
 }
-
-
-@NgModule({
-  declarations: [
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-})
-export class AppModule { }

@@ -1,36 +1,44 @@
 <html lang="en">
+
 <head>
-  <title>Angular uoMusic </title>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <title>Angular Mensajes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<!-- Barra de Navegación superior -->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <img src="/assets/img/logo.png" alt="logo"/> 
+  <!-- Barra de Navegación superior -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img src="/assets/img/logo.png" alt="logo" />
+      </div>
+      <div id="myNavbar">
+        <ul class="nav navbar-nav" id="barra-menu">
+            <li *ngIf="mensajesService.get('token')">
+                <a routerLink="/mensajes" >Canciones</a>
+            </li>
+            <li *ngIf="mensajesService.get('token')">
+                <a routerLink="/agregar" >Agregar</a>
+            </li>
+          <!-- Opciones de menú aqui -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right" id="barra-menu-derecha">
+          <!-- Opciones de menú aqui -->
+        </ul>
+      </div>
     </div>
-    <div id="myNavbar">
-      <ul class="nav navbar-nav" id="barra-menu">
-      		
-        <!-- Opciones de menú aqui -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right" id="barra-menu-derecha">
-		<!-- Opciones de menú aqui -->
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Contenido -->
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+  <!-- Contenido -->
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 
 </body>
+
 </html>

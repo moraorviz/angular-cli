@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { MensajesService } from './services/mensajes.service';
 import { HttpModule } from '@angular/http'; 
 import { MensajesComponent } from './mensajes/mensajes.component';
+import { DetallesComponent } from './detalles/detalles.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ export class AppComponent {
   declarations: [
     AppComponent,
     LoginComponent,
-    MensajesComponent
+    MensajesComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ export class AppComponent {
       { path: '',  component: LoginComponent },
       { path: 'login',  component: LoginComponent },
       { path: 'mensajes', component: MensajesComponent },
+      { path: 'mensaje/:id', component: DetallesComponent },
     ]),
     HttpModule
   ],

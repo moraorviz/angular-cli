@@ -28,5 +28,17 @@ export class MensajesComponent implements OnInit {
 
         console.log("onInit - final");
     };
-    
+
+    eliminarMensaje(id){
+        var resObservable = this.mensajesService.eliminarMensaje(id);
+        resObservable.subscribe(
+            res => { 
+                this.mensajes = this.mensajes.filter(mensaje => mensaje._id != id);
+                // filtramos y conservamos los mensajes con _id distinto al borrado
+            },
+            error => {
+                console.log("Error");
+            }
+          );
+    };
 }

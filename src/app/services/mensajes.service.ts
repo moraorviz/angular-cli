@@ -59,4 +59,24 @@ export class MensajesService {
        var resObservable = this.http.get(url, { headers: headers });
        return resObservable;
     };
+
+    getMensaje(id) {
+        var url = this.urlBase + "/mensaje/"+id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/JSON');
+        headers.append('token', this.token);
+        
+        var resObservable = this.http.get(url, { headers: headers });
+        return resObservable;
+     };
+
+    eliminarMensaje(id) {
+        var url = this.urlBase + "/mensaje/"+id;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/JSON');
+        headers.append('token', this.token);
+        
+        var resObservable = this.http.delete(url, { headers: headers });
+        return resObservable;
+     };
 }

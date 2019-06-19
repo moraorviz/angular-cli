@@ -15,7 +15,11 @@
 				<td>{{ mensaje.destino }}</td>
 				<td>{{ mensaje.texto }}</td>
 				<td>{{ mensaje.leido }}</td>
-				<td></td>
+				<td>
+					<a routerLink="/mensaje/{{ mensaje._id }}" > Detalles</a>
+					<br>
+					<a (click)=eliminarMensaje(mensaje._id)> Eliminar</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
