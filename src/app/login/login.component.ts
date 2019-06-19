@@ -26,4 +26,19 @@ export class LoginComponent {
       }
     );
   };
+
+  identificarUsuarioPro(){
+    var promesa 
+      = this.mensajesService.identificarUsuarioPro(this.email, this.password);
+        
+     promesa.then( 
+        retorno => {
+            if ( retorno ){
+                console.log("Login Promesa- Ir a la lista de canciones");
+            } else {
+                console.log("Login Promesa - Mensaje de error");
+            }
+        }
+    );      
+}
 }
