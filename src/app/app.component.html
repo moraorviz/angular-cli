@@ -19,10 +19,10 @@
       </div>
       <div id="myNavbar">
         <ul class="nav navbar-nav" id="barra-menu">
-            <li *ngIf="mensajesService.get('token')">
+            <li *ngIf="mensajesService.token">
                 <a routerLink="/mensajes" >Canciones</a>
             </li>
-            <li *ngIf="mensajesService.get('token')">
+            <li *ngIf="mensajesService.token">
                 <a routerLink="/agregar" >Agregar</a>
             </li>
           <!-- Opciones de menú aqui -->

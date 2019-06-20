@@ -79,4 +79,8 @@ export class MensajesService {
         var resObservable = this.http.delete(url, { headers: headers });
         return resObservable;
      };
+
+     get mytoken() {
+         return this.token;
+     };
 }
